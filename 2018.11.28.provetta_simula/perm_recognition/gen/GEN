@@ -1,0 +1,41 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# N  FAULT  SEED
+
+#ST: 10
+# COPY: testo/input0.txt
+# COPY: testo/input1.txt
+# COPY: testo/input2.txt
+
+#ST: 30
+10 0 777 
+10 1 777 
+10 2 777 
+10 0 666 
+10 1 666 
+10 2 666 
+
+#ST: 30
+100 0 777 
+100 1 777 
+100 2 777 
+100 0 666 
+100 1 666 
+100 2 666 
+
+#ST: 30
+1000000 0 777 
+1000000 1 777 
+1000000 2 777 
+1000000 0 666 
+1000000 1 666 
+1000000 2 666 
+
+ 
+

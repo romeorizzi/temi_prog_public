@@ -1,0 +1,8 @@
+memory_limit: 256
+name: perm_recognition
+time_limit: 1.0
+title: Riconoscere Permutazioni
+token_mode: infinite
+infile: ""
+outfile: ""
+

@@ -1,0 +1,2 @@
+Piuttosto che incontrare difficoltà durante la prova, concentratevi sul grosso dell'esercizio (dove stanno i punti e quindi il buon esito della prova stessa).
+Fino ai primi 70 punti basta che vi concentriate su un esercizio di mera programmazione, ossia basta esprimere in codice le condizioni necessarie che una permutazione deve rispettare per essere tale.

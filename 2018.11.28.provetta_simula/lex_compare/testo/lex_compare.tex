@@ -1,0 +1,85 @@
+\renewcommand{\nomebreve}{lex\_compare}
+\renewcommand{\titolo}{Confronto lessicografico tra stringhe}
+
+\introduzione{}
+
+Ecco l'alfabeto delle lettere italiane, per noi tutte rigorosamente maiuscole:\\
+
+A, B, C, D, E, F, G, H, I, L, M, N, O, P, Q, R, S, T, U, V, Z\\
+
+\noindent
+come vedete è tutto bello ordinato, no?
+E allora forza coraggio che formalizziamo un paio di concetti con cui già avete dimestichezza da tempo remoto.
+
+{\bf stringa:} Una stringa è una sequenza finita di lettere da un dato alfabeto, nel nostro caso utilizzeremo l'alfabeto italiano.
+
+{\bf ordinamento lessicografico:} Dall'ordinamento dell'alfabeto consegue un ordinamento dell'insieme delle stringhe costruibili da esso, secondo le regole:
+\begin{itemize}
+\item[1.] se $s_1$ ed $s_2$ sono entrambe la stringa vuota allora esse sono uguali;
+\item[2.] la stringa vuota è minore di qualsiasi altra stringa;
+\item[3.] se il primo carattere di $s_1$ è minore del primo carattere di $s_2$ allora $s_1 < s_2$;
+\item[4.] se $s_1$ ed $s_2$ iniziano con uno stesso carattere $C$, cioè $s_1 = Cs'_1$ e $s_s = Cs'_2$, allora il confronto tra $s_1$ ed $s_2$ si riduce al confronto tra $s'_1$ e $s'_2$.
+\end{itemize}
+
+Si noti che l'ordinamento lessicografico fà dell'insieme infinito delle stringhe un insieme totalmente ordinato. Devi scrivere una funzione {\tt lex\_compare} che riceve in input due stringhe $s$ e $t$ e stabilisce se esse siano uguali oppure quale delle due sia minore dell'altra.\\
+
+Trovi un template della soluzione nel file \textbf{\file{lex\_compare\_template\_sol.py}} tra gli attachments, dovrai solo risistemare l'implementazione della funzione richiesta che al momento ci vede poco tanto che per lei le stringhe sono tutte uguali:
+
+\begin{verbatim}
+def lex_compare(s,t):
+    return UGUALE
+\end{verbatim}
+
+Metti gli occhiali alla {\tt lex\_compare}. Essa deve ritornare MINORE quando $s<t$ e MAGGIORE quando $t<s$. In tutti gli altri casi dovrà continuare a ritornare UGUALE, ovviamente. (Nota Bene: le costanti simboliche UGUALE, MINORE e MAGGIORE sono definite da noi nel template, non ti serve di gestirle ma solo di utilizzarle, sono un nostro pensierino per voi per meglio accompagnarvi nei vostri primi passi).
+
+
+\sezionetesto{Dati di input}
+Il vostro programma riceve come suo input due stringhe $s$ e $t$ collocate su due righe diverse. \'E il separatore di riga (il carattere speciale di NEW-LINE, rigorosamente esterno all'alfabeto italico) che dice quando una stringa termina. Tali convenzioni in informatica vengono spesso chiamate standard in quanto il non rispettarle compromette l'interoperabilità dei sistemi realizzati.
+
+\sezionetesto{Dati di output}
+
+Il programma ritorna in output il numero $0$ se le due stringhe sono uguali, il numero $-1$ se la prima è più piccola della seconda, ed il numero $1$ se la prima è più grande della seconda. Ma se questa convenzione ti fa incrociare il cervello, tu non ti preoccupare che appunto per questo abbiamo introdotto per tè le costanti simboliche di cui sopra. Se ti limiti a modificare solo la funzione {\tt lex\_compare} come di fatto ti si chiede e consiglia, allora puoi semplicemente utilizzare le costanti simboliche UGUALE, MINORE e MAGGIORE. Progredendo imparerai come concederti tu stesso questi regalini praticando i principi della buona programmazione.
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{MARIA
+
+MARIANNA}{
+-1
+}
+
+\esempio{PESCECANE
+
+PESCE}{
+1
+}
+
+\esempio{BELLO
+
+BELLO}{
+0
+}
+
+\esempio{BUONO
+
+BELLO}{
+1
+}
+
+
+
+% Assunzioni
+\sezionetesto{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le len(s), len(t) \le 60$.
+\end{itemize}
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [10 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [20 punti]:} $s$ e $t$ sono stringhe di un solo carattere.
+    \item \textbf{Subtask 3 [20 punti]:} $s$ è di un solo carattere.
+    \item \textbf{Subtask 4 [20 punti]:} $s$ e $t$ sono stringhe di al più due caratteri.
+    \item \textbf{Subtask 5 [30 punti]:} nessuna restrizione.
+  \end{itemize}
+  

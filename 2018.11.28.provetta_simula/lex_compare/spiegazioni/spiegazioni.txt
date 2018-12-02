@@ -1,0 +1,30 @@
+La maggior parte di voi ha saputo risolvere in modo pieno (100 punti) questo esercizio, e tuttavia vi sollecito a leggere quanto ho quì da dirvi. 
+
+
+Una delle scoperte interessanti quando si incomincia a programmare è forse ritrovarsi inevitabilmente a dire:
+
+Ma quanto è scemo questo calcolatore:
+   Quando gli fò degli ordini, questo mi ubbidisce alla lettera!
+
+Noi vorremmo che fosse un pizzico più itelligente, che astraesse un attimo.
+Eppure, un modo di interpretare la tesi di Church-Turing è concludere che il calcolatore è in possesso della forma più generale ed ampia di pensiero scientifico. Scientifico nel senso di Galielo: trasmissibile, condivisibile, brevettabile. Sul verificabile mi astengo dall'aggiungerlo alla lista perchè temo che in pratica questo possa rivelarsi presto un requisito troppo restrittivo. Ci rinuncio ma solo perchè devo per portarmi fino al più estremo bordo di quanto intelleggibile almeno in teoria all'automatismo, al codificato, all'essoterico.
+
+Non appena aggiungiamo la possibilità di chiudere cicli, raggiungiamo la Turing completezza (il pieno delle potenzialità di ciò che è possibile a dalle macchine), e l'universalità all'unisono, e con essa, il dramma dell'indecibilità:
+non esiste una macchina che presa in input la descrizione di una macchina possa stabilire se essa termini o meno (come caso particolare, non possiamo quindi stabilire in modo automatico la correttezza dei nostri programmi).
+
+I cicli trovano un'alternativa del tutto equivalente nel consentire funzioni che possano chiamare se stesse. Quella che in informatica chiamiamo ricorsione.
+Scopo del presente documento è gettare le basi perchè voi possiate instaurare da subito un buon rapporto con la ricorsione, quella che sono solito chiamare la fatina ricorsina. Trilly è infatti uno spendido compagno di viaggio e di avventura, ed un incredibile aiuto. Spesso, anche nei corsi di informatica, la ricorsione viene vissuta come quel modo formale e astruso di fare le cose, quando al contrario dovrebbe essere intesa ed impiegata come lo strumento per pretendere dal calcolatore la sua piena intelligenza e fargli fare il lavoro per noi, anche quello più alto cui si possa mai ambire.
+
+Partiamo con questo problema del confronto lessicografico di stringhe come esempio. Sostanzialmente tutti lo avete risolto da 100% punti con una soluzione iterativa, ossia con un ciclo. In pratica si trattava di scrivere in codice python quella che era la consegna, ossia un mero esercizio di programmazione (senza vero problem solving). E tuttavia la vostra traduzione non è stata 1-1 con la definizione di ordine lessicografico proposta nel testo.
+La definizione data nel testo era più semplice e sbrigaiva della soluzione che voi avete dovuto dettagliare in codice.
+Voi direte: questo perchè nel testo ho potuto parlare all'intelligenza di esseri umani, mentre voi avete dovuto spezzettare le cose a omogeneizzato per il calcolatore bebè.
+Se da un lato è vero che codificare richiede un pò di pazienza aggiuntiva (in realtà più che altro serve attenzione e precisione aggiuntiva), dall'altro non fate l'errore di sottovalutare l'intelligenza sveglia dei bebè.
+
+Nel testo ho definito l'ordine lessicografico scrivendo:
+   Guardate al primo carattere, se sono diversi allora questo determina l'ordine.
+   Altrimenti fate il confronto su cosa venga dopo.
+
+Che figata sarebbe definire con altrettanta libertà e semplicità come vadano risolti i problemi allo stupidissimo calcolatore bebè.
+Ecco, la verità è che si può. Vi chiedo di guardare alle soluzioni nella directory sol con questi occhi.
+Qui vi potrà parere cosa da poco, ma una scoperta che vorrei sperimentaste e portaste a casa in questo corso eè quanto l'induzione matematica (pardon, la ricorsione) sia una tecnica viva e proattiva di problem soling, prima ancora che una fredda e spietata tecnica dimostrativa.
+

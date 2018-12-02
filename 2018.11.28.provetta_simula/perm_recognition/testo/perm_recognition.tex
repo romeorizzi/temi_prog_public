@@ -1,0 +1,75 @@
+\renewcommand{\nomebreve}{perm\_recognition}
+\renewcommand{\titolo}{Riconoscere Permutazioni}
+
+\introduzione{}
+
+Siamo soliti denotare con $\mathbf{N}_n := \{0,1, \ldots, n-1 \}$ l'insieme dei primi $n$ numeri naturali.
+Una funzione $f:\mathbf{N}_n \mapsto \mathbf{N}$ può essere facilmente codificata tramite una lista {\tt f}, il cui $i$-esimo elemento sia appunto {\tt f[i]} per ogni $i\in \mathbf{N}_n$.
+
+Una permutazione è una funzione \emph{biunivoca} $f:\mathbf{N}_n \mapsto \mathbf{N}_n$.
+Intuitivamente, in una permutazione il dominio ed il codominio coincidono, e gli elementi vengono solo spostati di posto (o rilabellati) ma senza che nessuno vada perso.
+In particolare, abbiamo l'iniettività:
+\[
+   f(a) = f(b) \; \Rightarrow \; a=b
+\]
+e la suriettività:
+\[
+   \forall a\in \mathbf{N}_n  \; \exists b  \; \; \mbox{tale che}  \;f(b) = a.
+\]
+
+
+Devi scrivere una funzione {\tt è\_perm} che riceve in input una lista $f$.
+Tale lista codifica una funzione $f:\mathbf{N}_n \mapsto \mathbf{N}$.
+Vogliamo che la funzione ritorni {\tt True} se $f$ è una permutazione e {\tt False} altrimenti.\\
+
+Trovi un template della soluzione nel file \textbf{\file{perm\_recognition.py}} tra gli attachments, dovrai solo risistemare l'implementazione della funzione richiesta che attualmente presenta degli evidenti falsi positivi:
+
+\begin{verbatim}
+def è_perm(f):
+    return True
+\end{verbatim}
+
+
+\sezionetesto{Dati di input}
+Il vostro programma riceve come suo input un numero naturale $n$ seguito da una sequenza di $n$ numeri naturali. In questo modo esso codifica una generica funzione $f:\mathbf{N}_n \mapsto \mathbf{N}$ dove il parametro $n$ è variabile.
+
+\sezionetesto{Dati di output}
+
+Il programma ritorna in output la stringa ``False'' se il riconoscimento ha avuto esito negativo, mentre ritorna la stringa ``True'' se la funzione $f$ esaminata è effettivamente una permutazione.
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{3
+
+1 0 2}{
+True
+}
+
+\esempio{3
+
+1 3 2}{
+False
+}
+
+\esempio{3
+
+2 1 2}{
+False
+}
+
+
+
+% Assunzioni
+\sezionetesto{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $0 \le n \le 1\,000\,000$.
+\end{itemize}
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [10 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [30 punti]:} $n \leq 10$.
+    \item \textbf{Subtask 3 [30 punti]:} $n \leq 100$.
+    \item \textbf{Subtask 4 [30 punti]:} $n \leq 1\,000\,000$.
+  \end{itemize}
+  

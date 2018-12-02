@@ -1,0 +1,8 @@
+memory_limit: 256
+name: lex_compare
+time_limit: 1.0
+title: Confronto lessicografico tra stringhe
+token_mode: infinite
+infile: ""
+outfile: ""
+
