@@ -1,0 +1,46 @@
+\renewcommand{\nomebreve}{conta\_inversioni}
+\renewcommand{\titolo}{Numero di Inversioni}
+
+\introduzione{}
+
+Devi scrivere una funzione {\tt numero\_di\_inversioni} che riceve in input una lista $p$ di numeri naturali tutti distinti e ritorna il numero di inversioni di $p$. Un'inversione di $p$ è una qualsiasi coppia di indici $(i,j)$ con $0\leq i < j < len(p)$ tale che $p[i] > p[j]$.
+
+Trovi un template della soluzione nel file \textbf{\file{conta\_inversioni\_template\_sol.py}}, dovrai solo risistemare l'implementazione della funzione {\tt num\_invertions} che attualmente non fà quanto richiesto: 
+
+\begin{verbatim}
+def numero_di_inversioni(p):
+    return 42
+\end{verbatim}
+
+
+\sezionetesto{Dati di input}
+Il vostro programma riceve in input una lista di numeri naturali separati da spazi e tutti diversi tra di loro.
+
+\sezionetesto{Dati di output}
+
+Il programma deve ritornare in output il numero di inversioni per la lista ricevuta in input.
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{1 0 3 2}{2}
+
+\esempio{0 1 2 3 4}{0}
+
+\esempio{4 3 2 1 0}{10}
+
+% Assunzioni
+\sezionetesto{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le n \le 100\,000$.
+\end{itemize}
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [15 punti]:} $n=2$.
+    \item \textbf{Subtask 3 [15 punti]:} $n=3$.
+    \item \textbf{Subtask 4 [30 punti]:} $n\leq 101$ e la lista è ordinata (in ordine crescente o decrescente).
+    \item \textbf{Subtask 5 [40 punti]:} $n \leq 100$.
+    \item \textbf{Subtask 6 [0 punti]:} $n \leq 100\,000$.
+  \end{itemize}
+  

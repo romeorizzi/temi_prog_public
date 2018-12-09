@@ -1,0 +1,8 @@
+memory_limit: 256
+name: conta_multipli
+time_limit: 1.0
+title: Conta i multipli di a non divisibili per b
+token_mode: infinite
+infile: ""
+outfile: ""
+

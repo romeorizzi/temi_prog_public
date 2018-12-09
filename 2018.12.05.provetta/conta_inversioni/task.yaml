@@ -1,0 +1,8 @@
+memory_limit: 256
+name: conta_inversioni
+time_limit: 1.0
+title: Numero di Inversioni
+token_mode: infinite
+infile: ""
+outfile: ""
+

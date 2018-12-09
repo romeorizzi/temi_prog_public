@@ -1,0 +1,3 @@
+Piuttosto che incontrare difficoltà durante la prova, concentratevi esclusivamente su dove stanno i punti messi in palia dall'esercizio.
+Una soluzione che impieghi tempo di calcolo quadratico porta a casa tutti i 100 punti in palio ed è estremamente più facile sia da individuare che mettere in codice.
+Concentratevi su questo obiettivo e considerate questo come un esercizio di mera programmazione, ossia basta esprimere in codice la nozione di cosa sia una possibile inversione e controllarle tutte una per una.

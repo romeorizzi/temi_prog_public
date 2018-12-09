@@ -1,0 +1,52 @@
+\renewcommand{\nomebreve}{conta\_multipli}
+\renewcommand{\titolo}{Conta i multipli di a non divisibili per b}
+
+\introduzione{}
+
+Devi scrivere una funzione {\tt conta\_multipli} che riceve in input tre numeri naturali $a$, $b$ e $c$ e ritorna il numero di quei numeri interi positivi $n$ tali che valgano le seguenti 3 proprietà:
+\begin{itemize}
+   \item $n\leq c$;
+   \item $a$ divide $n$;
+   \item $b$ non divide $n$.
+\end{itemize}
+
+Trovi un template della soluzione nel file \textbf{\file{conta\_multipli\_template\_sol.py}}, dovrai solo risistemare l'implementazione della funzione {\tt conta\_multipli} che attualmente non fà quanto richiesto: 
+
+\begin{verbatim}
+def conta_multipli(a,b,c):
+    return 42
+\end{verbatim}
+
+
+\sezionetesto{Dati di input}
+Il vostro programma riceve in input tre numeri naturali separati da spazi.
+
+\sezionetesto{Dati di output}
+
+Il programma deve ritornare il numero di multipli di $a$ non divisibili per $b$ che non eccedano $c$.
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{3 7 21}{6}
+
+\esempio{1 5 100}{80}
+
+\esempio{100 16 100}{1}
+
+% Assunzioni
+\sezionetesto{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le a,b,c \le 10^{100}$.
+\end{itemize}
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [20 punti]:} $a=c$, $\;a,b,c\leq 1000$.
+    \item \textbf{Subtask 3 [20 punti]:} $a=1$, $b>c$, $\;a,b,c\leq 1000$.
+    \item \textbf{Subtask 4 [20 punti]:} $a=1$, $\;a,b,c\leq 1000$.
+    \item \textbf{Subtask 5 [20 punti]:} $b>c$, $\;a,b,c\leq 1000$.
+    \item \textbf{Subtask 6 [20 punti]:} $a,b,c \leq 1000$.
+    \item \textbf{Subtask 7 [0 punti]:} $a,b,c \leq 10^{100}$.
+  \end{itemize}
+  

@@ -1,6 +1,6 @@
 La prendo un po' larga e, oltre a giocare insieme, facciamo persino un po' di teoria introducendo qualche nozione che possa servirvi più in generale.
 
-Di fronte a questo gioco combinatorico a 2 giocatori, assumo di partire con n pedine, e mi chiedo se comunque vada la partita essa sai giocoforza destinata a terminare.
+Di fronte a questo gioco combinatorico a 2 giocatori, assumo di partire con n pedine, e mi chiedo se comunque vada la partita essa sia giocoforza destinata a terminare.
 
 Secondo tè è vero che la partita è destinata a terminare?
 
