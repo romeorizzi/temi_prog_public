@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Template di soluzione di game2stacks
+# Soluzione di game2stacks
 
 from __future__ import print_function
 import sys
