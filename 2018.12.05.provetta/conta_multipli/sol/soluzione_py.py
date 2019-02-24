@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Soluzione di conta_multipli, written by Romeo Rizzi 2018.12.05
 
-from __future__ import print_function
-import sys
+#from __future__ import print_function
+#import sys
+#if sys.version_info < (3, 0):
+#    input = raw_input # in python2, l'equivalente di input è raw_input
 
 if sys.version_info < (3, 0):
     input = raw_input # in python2, l'equivalente di input è raw_input

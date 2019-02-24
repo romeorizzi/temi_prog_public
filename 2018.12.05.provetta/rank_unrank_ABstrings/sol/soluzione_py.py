@@ -25,7 +25,7 @@ def ABstring_of_len_and_rank(length, r):
     else:
         return ABstring_of_len_and_rank(length-1, r/2) + "B"
 
-input_string = raw_input()
+input_string = input()
 
 if input_string[0] == 'A' or input_string[0] == 'B':
    print( ABstring2rank(input_string) )
