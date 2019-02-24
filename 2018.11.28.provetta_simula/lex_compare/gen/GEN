@@ -9,9 +9,9 @@
 # N  FAULT  SEED
 
 #ST: 10
-# COPY: testo/input0.txt
-# COPY: testo/input1.txt
-# COPY: testo/input2.txt
+COPY testo/input0.txt
+COPY testo/input1.txt
+COPY testo/input2.txt
 
 #ST: 20
 A B

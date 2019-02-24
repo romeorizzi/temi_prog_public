@@ -35,15 +35,20 @@ def run(N, FAULT):
 
 
 if __name__ == "__main__":
-    if len(argv) != 4:
-        print usage
+    if len(argv) < 3:
         exit(1)
+    if argv[1] == "COPY":
+        os.system("cat " + argv[2])
+    else:
+        if len(argv) != 4:
+            print usage
+            exit(1)
 
-    N, FAULT, S = map(int, argv[1:])
-    assert (1 <= N <= MAXN)
-    assert (0 <= FAULT <= 2)
+        N, FAULT, S = map(int, argv[1:])
+        assert (1 <= N <= MAXN)
+        assert (0 <= FAULT <= 2)
 
-    nseed(S)
-    rseed(S)
-    run(N, FAULT)
+        nseed(S)
+        rseed(S)
+        run(N, FAULT)
 
