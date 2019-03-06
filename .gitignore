@@ -1,4 +1,7 @@
-*.pdf
+*~
+**/input
+**/output
 *.aux
 *.log
 *.pyc
+*.pdf
