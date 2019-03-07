@@ -1,0 +1,81 @@
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+Alice e Bob si alternano nell'atto di rimuovere pedine disposte su due pile.
+Ad ogni suo turno, ciascun giocatore deve scegliere una delle due pile e quante 
+pedine rimuovere dalla pila scelta: ne potrà rimuovere una, due, oppure tre, di 
+nuovo a sua scelta.
+Il giocatore che non riesce più a muovere (perchè il numero di pedine è ormai sceso 
+a zero in entrambe le pile) perde la partita, mentre il suo avversario viene proclamato 
+vincitore degli undergames 2019.02.27.
+
+Devi scrivere una funzione che riceve in input due parametri $n_1$ ed $n_2$ che 
+specificano il numero di pedine attualmente presenti nella prima e nella seconda pila, 
+rispettivamente. La funzione deve individuare se esiste una mossa vincente e, in caso 
+affermativo, dire quale. In caso contrario la funzione abbandona il gioco rifiutandosi di muovere.
+
+Trovi un template della soluzione nel file \textbf{game123-123\_template\_sol.py} 
+tra gli attachments, dovrai solo curare l'implementazione della funzione richiesta:
+
+\begin{verbatim}
+def play(n1, n2):
+    return (0,0)
+\end{verbatim}
+
+Attualmente {\tt play} restituisce sempre $(0,0)$, che equivale ad abbandonare la 
+partita senza rimuovere alcuna pedina, da nessuna pila. Tuttavia questa è la risposta 
+corretta solo in quelle situazioni in cui il giocatore non abbia una strategia 
+vincente (ossia non possa vincere pur assumendo che l'avversario giochi ottimamente). 
+Quando invece il giocatore sia in grado di vincere a gioco ottimo, allora vorremmo 
+che la funzione {\tt play} computasse una mossa vincente e restituisse il numero 
+di pedine da rimuovere sulle due pile (in generale almeno uno dei due numeri restituiti 
+deve essere nullo). Il tuo compito è correggere/completare l'implementazione 
+attuale della funzione {\tt play}. Vediamo se riusciamo a portare a casa questa vittoria! 
+
+
+\InputFile
+Il vostro programma riceve come suo input due numeri naturali $n_1$ ed $n_2$ che 
+indicano il numero di pedine presenti su ciascuona delle due pile del gioco quando 
+siete chiamati a compiere la vostra mossa.
+
+\OutputFile
+Dovete restituire in output la coppia di numeri $(0,0)$ quando realizzate che la 
+partita è ormai persa, in tutti gli altri casi dovete invece restituire una codifica 
+di una qualche mossa vincente. La mossa vincente è rappresentata da una coppia $(r,0)$ 
+se prescrive di rimuovere $r$ pedine dalla prima pila; essa è invece rappresentata da 
+una coppia $(0,r)$ se prescrive di rimuovere $r$ pedine dalla seconda pila. 
+In entrambi i casi $1\leq r \leq 3$. A livello di output dell'intero programma, 
+tali coppie ordinate vengono stampate come due interi separati da uno spazio.
+
+\textbf{NOTA}: viene fornita una descrizione del formato di input/output soltanto 
+per facilitarvi il test sul vostro computer. Per sottomettere il problema è obbligatorio 
+utilizzare il template che potete scaricare fra gli allegati del problema, avendo 
+cura di modificare solamente l'implementazione delle funzioni richieste. Questo 
+è necessario per garantire la compatibilità del vostro programma con il sistema 
+di valutazione, che potrebbe utilizzare una versione di python diversa (quale python2).
+
+\Examples
+\begin{example}
+\exmpfile{game123-123.input0.txt}{game123-123.output0.txt}%
+\exmpfile{game123-123.input1.txt}{game123-123.output1.txt}%
+\exmpfile{game123-123.input2.txt}{game123-123.output2.txt}%
+\exmpfile{game123-123.input3.txt}{game123-123.output3.txt}%
+\exmpfile{game123-123.input4.txt}{game123-123.output4.txt}%
+\end{example}
+
+\Constraints
+\begin{itemize}[nolistsep, noitemsep]
+  \item $0 \le n_1, n_2 \le 10^{100}$.
+\end{itemize}
+
+\Scoring
+\begin{itemize}
+  \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+  \item \textbf{Subtask 2 [30 punti]:} $n_1+n_2 \leq 10$.
+  \item \textbf{Subtask 3 [30 punti]:} $n_1, n_2  \leq 100$.
+  \item \textbf{Subtask 4 [10 punti]:} $n_1 = 4$, $n_2 \leq 10^{100}$.
+  \item \textbf{Subtask 5 [30 punti]:} $n_1, n_2  \leq 10^{100}$.
+\end{itemize}
+  

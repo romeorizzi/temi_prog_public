@@ -1,0 +1,9 @@
+memory_limit: 256
+name: game123-123
+time_limit: 1.0
+title: Da quale di due pile rimuovere 1,2 o 3 pedine?
+token_mode: infinite
+syllabuslevel: 3
+infile: ""
+outfile: ""
+

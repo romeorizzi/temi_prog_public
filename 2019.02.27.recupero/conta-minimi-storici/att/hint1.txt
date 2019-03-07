@@ -1,0 +1,2 @@
+Piuttosto che incontrare difficoltà durante la prova, concentratevi su singoli subtasks che comunque vi consentano di dimostrare qualcosa, portare a casa dei punti, ed incominciare a dialogare col problema, col linguaggio di programmazione, col compilatore, coi vostri errori, e col sistema di correzione e valutazione automatica a feedback immediato e a ciclo continuo.
+

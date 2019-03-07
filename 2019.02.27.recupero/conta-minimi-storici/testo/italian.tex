@@ -1,0 +1,104 @@
+\renewcommand{\inputfile}{\texttt{stdin}}
+\renewcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+Siamo stati incaricati di condurre un'analisi sugli andamenti degli indici azionari. 
+Una lista di numeri naturali può essere utilizzata per codificare una sequenza di 
+naturali, che nelle nostre applicazioni rappresenta una generica serie temporale. 
+Si consideri ad esempio la seguente sequenza
+
+\[
+\mathbf{15}, 22, 18, \mathbf{14}, \mathbf{12}, 13, 19, 21, 25, \mathbf{7}, 7, 10, 17
+\]
+  
+dove abbiamo riportato in neretto quei numeri che sono minimi storici della serie 
+temporale rappresentata.
+Diamo ora una rappresentazione più fine, 
+dove distinguiamo i minimi storici in funzione della parità del loro valore come numeri naturali ($0$=pari, $1$=dispari):
+
+\[
+\underbrace{15}_{1}, 22, 18, \underbrace{14}_0, \underbrace{12}_0, 13, 19, 21, 25, \underbrace{7}_1, 7, 10, 17
+\]
+  
+\noindent
+Devi dare corretta implementazione alle seguenti due funzioni:\\
+
+\begin{verbatim}
+      conta_minimi_storici_pari(st_list)
+\end{verbatim}
+
+\noindent
+e
+
+\begin{verbatim}
+      conta_minimi_storici_dispari(st_list)
+\end{verbatim}
+
+\noindent
+Entrambe ricevono in input una serie temporale codificata come una lista di numeri naturali. 
+Esse intendono restituire in output il numero di minimi storici di valore pari e dispari, rispettivamente.
+
+    
+Trovi un template della soluzione nel file \textbf{\file{conta-minimi-storici\_template\_sol.py}} 
+tra gli allegati, dovrai solamente fornire l'implementazione delle due funzioni 
+di modo che resituiscano sempre la risposta corretta.
+
+Si noti che il primo elemento della serie semporale, ossia {\tt st\_list[0]}, 
+è sempre un minimo storico, infatti un elemento è un minimo storico quando tutti 
+gli elementi che lo precedono sono strettamente maggiori di esso. 
+Ovviamente sarà la parità di {\tt st\_list[0]} a stabilire se esso debba essere 
+conteggiato come minimo storico di valore pari oppure dispari. 
+
+\InputFile
+Il vostro programma, nell'ordine, riceve in input:
+\begin{itemize}
+\item un numero naturale $n$, indicante la lunghezza della sequenza considerata 
+\item un numero naturale $p$, indicante la funzione da chiamare
+\item una sequenza di $n$ numeri naturali, i valori di cui calcolare i minimi storici
+\end{itemize}
+
+\OutputFile
+\begin{itemize}
+\item se $p = 0$ il programma restituisce in output il numero di minimi storici pari,
+  ossia il valore restituito dalla funzione \texttt{conta\_minimi\_storici\_pari(st\_list)}
+\item se $p = 1$ il programma restituisce in output il numero di minimi storici 
+  dispari, ossia il valore restituito dalla funzione \texttt{conta\_minimi\_storici\_dispari(st\_list)}
+\end{itemize}
+
+\textbf{NOTA}: viene fornita una descrizione del formato di input/output soltanto 
+per facilitarvi il test sul vostro computer. Per sottomettere il problema è obbligatorio 
+utilizzare il template che potete scaricare fra gli allegati del problema, avendo 
+cura di modificare solamente l'implementazione delle funzioni richieste. Questo 
+è necessario per garantire la compatibilità del vostro programma con il sistema 
+di valutazione, che potrebbe utilizzare una versione di python diversa (quale python2).
+
+\Examples
+% ridefinisco la dimensione delle colonne di input/output
+\exmpwidinf=0.575\textwidth % default 0.475
+\exmpwidouf=0.375\textwidth % default 0.475
+\begin{example}
+\exmpfile{conta_minimi_storici.input0.txt}{conta_minimi_storici.output0.txt}%
+\exmpfile{conta_minimi_storici.input1.txt}{conta_minimi_storici.output1.txt}%
+\exmpfile{conta_minimi_storici.input2.txt}{conta_minimi_storici.output2.txt}%
+\exmpfile{conta_minimi_storici.input3.txt}{conta_minimi_storici.output3.txt}%
+\exmpfile{conta_minimi_storici.input4.txt}{conta_minimi_storici.output4.txt}%
+\end{example}
+
+\Constraints
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le n \le 100\,000$.
+\end{itemize}
+
+\Scoring
+\begin{itemize}
+  \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+  \item \textbf{Subtask 2 [20 punti]:} $n = 1$.
+  \item \textbf{Subtask 3 [20 punti]:} $n \leq 100$, i valori nella serie temporale sono tutti pari.
+  \item \textbf{Subtask 4 [20 punti]:} $n \leq 100$, i valori nella serie temporale sono tutti dispari.
+  \item \textbf{Subtask 5 [20 punti]:} $n \leq 100$, i valori nella serie possono essere sia pari che dispari.
+  \item \textbf{Subtask 6 [20 punti]:} $n \leq 100\,000$.
+\end{itemize}
+  

@@ -1,0 +1,9 @@
+memory_limit: 256
+name: perm-composition
+time_limit: 1.0
+title: Composizione di Permutazioni
+token_mode: infinite
+syllabuslevel: 4
+infile: ""
+outfile: ""
+

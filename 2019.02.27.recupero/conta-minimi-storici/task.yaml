@@ -1,0 +1,9 @@
+memory_limit: 256
+name: conta-minimi-storici
+time_limit: 1.0
+title: Contare i minimi storici pari e dispari di una sequenza
+token_mode: infinite
+syllabuslevel: 1
+infile: ""
+outfile: ""
+

@@ -1,0 +1,153 @@
+\renewcommand{\inputfile}{\texttt{stdin}}
+\renewcommand{\outputfile}{\texttt{stdout}}
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+La composizione di due funzioni $f$ e $g$ istituisce una nuova funzione $f\circ g$ 
+definita come $f\circ g (x) := f(g(x)) \, \forall x$. 
+Intuitivamente, la composizione $f\circ g$ corrisponde ad applicare prima $g$ e dopo $f$.
+
+Siamo soliti denotare con $\mathbf{N}_n := \{0,1, \ldots, n-1 \}$ l'insieme dei primi $n$ numeri naturali.
+Una funzione $f:\mathbf{N}_n \mapsto \mathbf{N}$ può essere facilmente codificata 
+tramite una lista {\tt f}, il cui $i$-esimo elemento sia appunto {\tt f[i]} per ogni $i\in \mathbf{N}_n$.
+
+Una permutazione è una funzione \emph{biunivoca} $f:\mathbf{N}_n \mapsto \mathbf{N}_n$.
+Intuitivamente, in una permutazione il dominio ed il codominio coincidono, 
+e gli elementi vengono solo spostati di posto (o rieticchettati) ma senza che nessuno vada perso.
+In particolare, abbiamo l'iniettività:
+\[
+   f(a) = f(b) \; \Rightarrow \; a=b
+\]
+e la suriettività:
+\[
+   \forall a\in \mathbf{N}_n  \; \exists b  \; \; \mbox{tale che}  \;f(b) = a.
+\]
+
+La composizione di permutazioni non è che un caso particolare delle composizione 
+di funzioni, con l'unica accortezza che è prevalso l'uso di applicare all'argomento 
+$x$, prima la permutazione più a sinistra, e poi procedere via via verso destra.
+
+\noindent
+  \begin{minipage}[c]{.48\textwidth}
+    Applichiamo prima la permutazion $P$ che sposta la persona seduta
+    sulla sedia~0 alla sedia~1, quella della~1 alla~2, quella della~2 alla~3, e quella della~3 alla~0.
+    Poi applichiamo la permutazion $Q$ che sposta la persona ora seduta
+    sulla sedia~0 alla~1, quella sulla~1 alla~0, quella sulla~2 alla sedia~3, e quella sulla~3 alla~2.
+    L'effetto finale è che la persona originariamente seduta
+    sulla sedia~0 è stata spostata alla sedia~0 (ossia in definitiva non si è mossa), quella della sedia~1 alla sedia~3, quella della sedia~2 alla sedia~2, e quella della sedia~3 alla sedia~1.
+\end{minipage}%
+\hspace{8.0mm}%
+\begin{minipage}[c]{.50\textwidth}
+
+%\begin{tikzpicture}[scale=0.8,show background rectangle]
+\begin{tikzpicture}[scale=0.7]
+\begin{scope}[every node/.style={circle,fill=gray!30}]
+    \node (0) at (0,0) {$0$};
+    \node (1) at (0,1.5) {$1$};
+    \node (2) at (0,3) {$2$};
+    \node (3) at (0,4.5) {$3$};
+    \node [fill=white] at (1.5,5.5) {$P$};
+    \node (10) at (3,0) {$0$};
+    \node (11) at (3,1.5) {$1$};
+    \node (12) at (3,3) {$2$};
+    \node (13) at (3,4.5) {$3$};
+    \node [fill=white] at (4.5,5.5) {$Q$};
+    \node (20) at (6,0) {$0$};
+    \node (21) at (6,1.5) {$1$};
+    \node (22) at (6,3) {$2$};
+    \node (23) at (6,4.5) {$3$};
+
+    \node (50) at (8,0) {$0$};
+    \node (51) at (8,1.5) {$1$};
+    \node (52) at (8,3) {$2$};
+    \node (53) at (8,4.5) {$3$};
+    \node [fill=white] at (10,5.5) {$P\circ Q$};
+    \node (60) at (12,0) {$0$};
+    \node (61) at (12,1.5) {$1$};
+    \node (62) at (12,3) {$2$};
+    \node (63) at (12,4.5) {$3$};
+\end{scope}
+  
+\begin{scope}[>={Stealth[black]},
+              every node/.style={fill=white,circle},
+              every edge/.style={draw=red,very thick}]
+    \path [->] (0) edge node[opacity=0.5] {\small $0$} (11);
+    \path [->] (1) edge node[pos=.34,fill opacity=0.5] {$1$} (12);
+    \path [->] (2) edge node[opacity=0.5] {$2$} (13);
+    \path [->] (3) edge node[pos=.36,fill opacity=0.5] {$3$} (10);
+    
+    \path [->] (11) edge node[pos=.2,fill opacity=0.5] {\small $0$} (20);
+    \path [->] (12) edge node[pos=.2,fill opacity=0.5] {\small $1$} (23);
+    \path [->] (13) edge node[pos=.2,fill opacity=0.5] {\small $2$} (22);
+    \path [->] (10) edge node[pos=.2,fill opacity=0.5] {\small $3$} (21);
+
+    \path [->] (50) edge node[opacity=0.5] {\small $0$} (60);
+    \path [->] (51) edge node[pos=.2,fill opacity=0.5] {\small $1$} (63);
+    \path [->] (52) edge node[pos=.2,fill opacity=0.5] {\small $2$} (62);
+    \path [->] (53) edge node[pos=.2,fill opacity=0.5] {\small $3$} (61);
+
+\end{scope}        
+\end{tikzpicture}
+
+\end{minipage}
+
+\medskip
+
+Devi scrivere una funzione {\tt perm\_composition} che riceve in input due parametri: 
+\begin{itemize}
+\item una lista $p_1$ che codifica una prima permutazione da applicare per prima
+\item una lista $p_2$ che codifica una permutazione da applicare successivamente
+\end{itemize}
+La tua procedura deve ritornare la composta, ossia la permutazione totale in definitiva eseguita. \\
+
+Trovi un template della soluzione nel file \textbf{\file{perm-composition\_template\_sol.py}}, 
+dovrai solo risistemare l'implementazione della funzione {\tt perm\_composition}
+che attualmente non fà quanto richiesto: 
+
+\begin{verbatim}
+def perm_composition(p1, p2):
+    return [0]*len(p1)
+\end{verbatim}
+
+\InputFile
+Il vostro programma legge da standard input 3 righe, così composte:
+\begin{itemize}
+\item riga 1: un numero naturale $n$, che indica la lunghezza delle sequenze. 
+\item riga 2: una sequenza $p_1$, formata da $n$ numeri naturali compresi tra $0$ ed $n-1$, e tutti diversi
+\item riga 3: una sequenza $p_2$, formata da $n$ numeri naturali compresi tra $0$ ed $n-1$, e tutti diversi
+\end{itemize}
+
+\OutputFile
+Il programma deve scrivere in output un sola riga contenente $n$ interi separati 
+da uno spazio, contententente la codifica della permutazione composta $p_1\circ p_2$, 
+
+\textbf{NOTA}: viene fornita una descrizione del formato di input/output soltanto 
+per facilitarvi il test sul vostro computer. Per sottomettere il problema è obbligatorio 
+utilizzare il template che potete scaricare fra gli allegati del problema, avendo 
+cura di modificare solamente l'implementazione delle funzioni richieste. Questo 
+è necessario per garantire la compatibilità del vostro programma con il sistema 
+di valutazione, che potrebbe utilizzare una versione di python diversa (quale python2).
+
+\Examples
+\begin{example}
+\exmpfile{perm_composition.input0.txt}{perm_composition.output0.txt}%
+\exmpfile{perm_composition.input1.txt}{perm_composition.output1.txt}%
+\exmpfile{perm_composition.input2.txt}{perm_composition.output2.txt}%
+\end{example}
+
+\Constraints
+\begin{itemize}[nolistsep, noitemsep]
+  \item $0 \le n \le 100\,000$.
+\end{itemize}
+
+\Scoring
+\begin{itemize}
+  \item \textbf{Subtask 1 [10 punti]:} gli esempi del testo.
+  \item \textbf{Subtask 2 [10 punti]:} $p_2$ è la funzione inversa di $p_1$.
+  \item \textbf{Subtask 3 [30 punti]:} $n \leq 10$.
+  \item \textbf{Subtask 4 [30 punti]:} $n \leq 100$.
+  \item \textbf{Subtask 5 [20 punti]:} $n \leq 100\,000$.
+\end{itemize}
+  

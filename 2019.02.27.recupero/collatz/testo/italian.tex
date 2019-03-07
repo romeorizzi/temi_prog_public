@@ -1,0 +1,85 @@
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+%\introduzione{Olimpiadi Italiane di Informatica - Selezioni Territoriali 2014}
+
+\medskip
+
+Consideriamo il seguente procedimento, che prende in ingresso un intero positivo $N$:
+\begin{enumerate}
+\item Se $N$ vale $1$, termina.
+\item Se $N$ è pari, passa ad $N := N/2$ e ripeti il procedimento.
+\item Se $N$ è dispari, passa ad $N := 3N +1$ e ripeti il procedimento.
+\end{enumerate}
+
+Ecco la traccia dei numeri naturali visitati se inizialmente partiamo dal valore $N=6$:
+$$6, 3, 10, 5, 16, 8, 4, 2, 1.$$
+
+La congettura di Collatz, chiamata anche congettura $3N+1$, afferma che il procedimento 
+descritto qui sopra termina sempre, qualsiasi sia il naturale $N$ di partenza.
+
+È riferendosi a questa famosa congettura che il celebre matematico Erdős commentò 
+sul come questioni semplici ma elusive mettono in evidenza quanto poco noi si possa 
+accedere ai misteri del ``Grande Libro''.
+
+Ti chiediamo di scrivere una funzione che riceve in input un numero naturale $N$ 
+e ritorna la lista dei numeri naturali visitati applicando il procedimento in questione partendo da $N$.
+
+Trovi un template della soluzione nel file \textbf{collatz\_template\_sol.py} tra 
+gli allegati, dovrai solo curare l'implementazione della funzione richiesta:
+
+\begin{verbatim}
+def simulate(n):
+    confs = []
+    confs.append(5)
+    confs.append(16)
+    confs.append(8)
+    confs.append(4)
+    confs.append(2)
+    confs.append(1)
+    return confs
+\end{verbatim}
+
+Attualmente {\tt simulate} restituisce la lista corretta solo quando le viene passato 
+il numero naturale $N=5$. Il tuo compito è correggere/completare l'implementazione 
+attuale della funzione {\tt simulate}. 
+
+\textbf{NOTA}: per aggiungere un elemento in coda ad una lista va utilizzato 
+il metodo \texttt{append()}, come nell'esempio sopra.
+
+\InputFile
+Il programma riceve come suo input un numero naturale $N$.
+
+\OutputFile
+Il programma restituisce in output la sequenza dei numeri naturali visitati applicando 
+il procedimento in questione partendo da $N$, stampandoli uno per riga. 
+
+\textbf{NOTA}: viene fornita una descrizione del formato di input/output soltanto 
+per facilitarvi il test sul vostro computer. Per sottomettere il problema è obbligatorio 
+utilizzare il template che potete scaricare fra gli allegati del problema, avendo 
+cura di modificare solamente l'implementazione delle funzioni richieste. Questo 
+è necessario per garantire la compatibilità del vostro programma con il sistema 
+di valutazione, che potrebbe utilizzare una versione di python diversa (quale python2).
+
+\Examples
+\begin{example}
+\exmpfile{collatz.input0.txt}{collatz.output0.txt}%
+\exmpfile{collatz.input1.txt}{collatz.output1.txt}%
+\end{example}
+
+\Constraints
+\begin{itemize}[nolistsep, noitemsep]
+\item $2 \le N \le 1\,000 $.
+\item E' noto che, per qualsiasi $N$ minore di $1000$, il numero di naturali visitati è minore di $200$.
+\end{itemize}
+
+\Scoring
+\begin{itemize}
+  \item \textbf{Subtask 1 [10 punti]:} gli esempi del testo.
+  \item \textbf{Subtask 2 [30 punti]:} $n \leq 10$.
+  \item \textbf{Subtask 3 [30 punti]:} $n \leq 100$.
+  \item \textbf{Subtask 4 [30 punti]:} $n \leq 1000$.
+\end{itemize}
+  

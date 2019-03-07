@@ -1,0 +1,46 @@
+# esempi del testo
+#ST: 0
+#COPY: testo/conta_minimi_storici.input0.txt
+#COPY: testo/conta_minimi_storici.input1.txt
+#COPY: testo/conta_minimi_storici.input2.txt
+#COPY: testo/conta_minimi_storici.input3.txt
+#COPY: testo/conta_minimi_storici.input4.txt
+
+# N     P   E   seed
+
+# N = 11
+#ST: 20 
+1       1   0   111
+1       0   0   222
+1       1   0   333
+1       0   0   444
+
+# N <= 100, valori tutti pari (E = 1)
+#ST: 20 
+50      1   1   555
+50      0   1   666
+100     1   1   777
+100     0   1   888
+
+# N <= 100, valori tutti dispari (E = 2)
+#ST: 20 
+50      1   2   505
+50      0   2   616
+100     1   2   727
+100     0   2   838
+
+# N <= 100, tutti possibili valori (E = 0)
+#ST: 20 
+50      1   0   545
+50      0   0   656
+100     1   0   767
+100     0   0   878
+
+# N <= 100_000
+#ST: 20 
+50000   1   0   1111
+50000   0   0   2222
+54321   1   0   3333
+54321   0   0   4444
+100000  1   0   5555
+100000  0   1   6666

@@ -1,0 +1,38 @@
+# N  FAULT  SEED
+
+#ST: 10
+#COPY: testo/perm_composition.input0.txt
+#COPY: testo/perm_composition.input1.txt
+#COPY: testo/perm_composition.input2.txt
+
+#ST: 10
+100 1 111
+100 1 222
+100 1 333
+100 1 444
+100 1 555
+
+#ST: 30
+10 0 777 
+10 0 666 
+10 0 555 
+10 0 444 
+10 0 222 
+10 0 111 
+
+#ST: 30
+100 0 777 
+100 0 666 
+100 0 555 
+100 0 444 
+100 0 222 
+100 0 111 
+
+#ST: 20
+100000 0 777 
+100000 0 666 
+100000 0 444 
+100000 0 222 
+100000 0 111 
+100000 0 000 
+

@@ -1,0 +1,11 @@
+name: esame-prog-mat
+description: Esame Laboratorio di Programmazione
+date: 27 Febbraio 2019
+location: Univesità degli studi di Verona
+logo: logo.png
+token_mode: infinite
+tasks:
+        - conta-minimi-storici
+        - collatz
+        - game123-123
+        - perm-composition

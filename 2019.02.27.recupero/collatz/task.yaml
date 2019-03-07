@@ -1,0 +1,9 @@
+memory_limit: 256
+name: collatz
+time_limit: 1.0
+title: "Congettura di Collatz: verifica per simulazione su numeri piccoli"
+token_mode: infinite
+syllabuslevel: 2
+infile: ""
+outfile: ""
+
