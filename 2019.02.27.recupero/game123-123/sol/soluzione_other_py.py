@@ -13,6 +13,10 @@ if sys.version_info < (3, 0):
 def play(n1, n2):
     if n1%4 == n2%4:
         return (0,0)
+    if n1 > n2 and n2 > n1%4:
+        return (0, (1000000000 + n2-n1)%4)
+    if n2 > n1 and n1 > n2%4:
+        return ((1000000000 + n1-n2)%4, 0)
     if n1 > n2:
         return ((n1-n2)%4, 0)
     if n2 > n1:
