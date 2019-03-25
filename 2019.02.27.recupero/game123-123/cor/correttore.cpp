@@ -71,9 +71,9 @@ int main(int argc, char *argv[]) {
     ex("Ti sei arreso in una situazione dove invece potevi vincere.", 0.0);
   
   if( (m1 + m2 > 0) && (c_m1 + c_m2 == 0) )
-    ex("Inutile giocare in una situazione persa. Dovresti arrenderti.", 0.0);
+    ex("Inutile giocare in una situazione persa. Dovresti arrenderti come spiegato nel testo dell'esercizio.", 0.0);
 
-  int new1 = n1-m1, new2 = n1-m2;
+  int new1 = n1-m1, new2 = n2-m2;
   int diff = new1 - new2;
   if(diff < 0)  diff = -diff;
   
